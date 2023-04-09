@@ -1,0 +1,160 @@
+<html>
+  <head>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+  
+
+
+<title>Animania</title>    
+    <link rel="stylesheet" href="style.css" />
+    <!--Copy this line of code-->
+  </head>
+  <body>
+
+
+    <div id="drawingOptionsContainer">
+      <div id="drawingOptions">
+        <ul id="drawingOptionsList">
+          
+            <button onclick="activateRectangle()" id="rectangleButton"></button>
+            <!-- <button onclick="addRectangle(this)" id="rectangleButton"></button> -->
+          </li>
+          <li>
+            <button onclick="activateCircle()" id="circleButton"></button>
+
+          </li>
+          <li>
+            <button onclick="checkHideShow()">hide SHOW</button>
+
+          
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="canvasContainer">
+      <div class="canvas" id="canvas0">
+        
+      </div>
+      <div id="timelineContainer">
+      <button id = "playButton" onclick = "play()">Play scene</button>
+        <div class = "timeline" id="timeline0">
+          <div id="timelineCursorContainer">
+            <div id = 'wholeCursor'>
+              <div id="timelineCursor"></div>
+              <div id="timelineLine"></div>
+            </div>
+           </div>
+          <div class="labels">
+            <span>0</span>
+            <span>2</span>
+            <span>4</span>
+            <span>6</span>
+            <span>8</span>
+          </div>
+          
+          <div class = 'timeline' id="shapeTimelineContainer">
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+
+
+    <button  
+      style="
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+          sans-serif;
+        position: absolute;
+      left:9%;
+        top: 9.5em;
+        z-index: 47;
+      "
+      onclick = 'addScene()'
+    >
+      +
+    </button>
+    <div id="scenesContainer">
+      <div id="scenesMenu">
+        <ul id="scenesList">
+          
+            <li class = "clonedScene" id="scene0"></li>
+            
+        </ul>
+      </div>
+    </div>
+    
+
+    
+    <div id="backgroundStyleContainer" style="visibility: hidden">
+      <div id="backgroundStyle">
+        <ul id="backgroundStyleMenu">
+          <li>
+            <div class="adjustmentInput" id="colorAdjustment"></div>
+            <p class="inputTitle">Background color</p>
+            <input
+              type="color"
+              class="color-picker"
+              id="backgroundColorAdjustment"
+              oninput="canvasHandler(this)"
+              onchange="cloneDiv()"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="styleMenuContainer">
+      <div id="styleMenu">
+        <ul id="sizeInputList">
+          <li>
+            <button id="deleteButton" onclick="deleteDiv()">Erase shape</button>
+          </li>
+          <li>
+            <div class="adjustmentInput" id="colorAdjustment"></div>
+            <p class="inputTitle">Outline</p>
+            <input
+              type="color"
+              class="color-picker"
+              id="borderColorPicker"
+              oninput="sliderHandler(this)"
+              onchange="cloneDiv()"
+              
+            />
+          </li>
+          <li>
+            <div class="adjustmentInput" id="colorAdjustment"></div>
+            <p class="inputTitle">Fill</p>
+            <input
+              type="color"
+              class="color-picker"
+              id="backgroundColorPicker"
+              oninput="sliderHandler(this)"
+              onchange="cloneDiv()"
+            />
+          </li>
+          <li>
+            <div class="adjustmentInput" id="colorAdjustment"></div>
+            <p class="inputTitle">Opacity</p>
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="000.1"
+              id="opacitySlider"
+              oninput="sliderHandler(this)"
+              onchange="cloneDiv()"
+            />
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  
+    
+    <script src="main.js"></script>
+  
+  </body>
+</html>
